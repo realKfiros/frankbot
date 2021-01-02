@@ -19,7 +19,7 @@ client.on('ready', () => {
 client.on('message', async (msg) => {
   if (msg.body.startsWith('@Frank')) {
     if (people.jah(msg)) {
-      console.log("Jah you're clapped stfu");
+      msg.reply("Jah you're clapped stfu");
     } else {
       let lowercase = msg.body.toLowerCase();
       if (lowercase.includes('god')) {
@@ -83,6 +83,9 @@ client.on('message', async (msg) => {
     if (people.yuval(msg)) {
       msg.reply('מטוס');
     }
+  }
+  if (msg.body.includes('סייבר')) {
+    msg.reply('מטוס');
   }
   if (teams.chelsea(msg)) {
     msg.reply('Chelsea is shit');
