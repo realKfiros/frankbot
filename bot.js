@@ -6,7 +6,18 @@ const client = new Client();
 const people = require('./people');
 const teams = require('./best/team');
 
-client.initialize();
+if (process.env.ENVIRONMENT === 'test') {
+  client.initialize();
+} else {
+  // set browser to chromium for raspberry pi os
+  client.initialize({
+    browserOptions: {
+      headless: true,
+      executablePath: '/usr/bin/chromium-browser',
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
+    },
+  });
+}
 
 client.on('qr', (qr) => {
   qrcode.generate(qr, { small: true });
