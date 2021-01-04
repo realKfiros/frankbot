@@ -28,7 +28,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async (msg) => {
-  if (msg.body.startsWith('@Frank')) {
+  if (msg.body.toLowerCase().includes('@frank')) {
     if (people.jah(msg)) {
       msg.reply("Jah you're clapped stfu");
     } else {
@@ -60,11 +60,11 @@ client.on('message', async (msg) => {
           } else if (teams.tottenham(msg)) {
             msg.reply('Enjoy Europa League tottenham fan');
           } else if (teams.southamption(msg)) {
-            msg.reply('My mistake :( Southampton is the best!');
+            msg.reply('Yes');
           } else if (teams.or(msg)) {
             msg.reply('Liverpool are always the best!');
           } else {
-            msg.reply('Liverpool');
+            msg.reply('Liverpool are the best team in the world');
           }
         } else if (lowercase.includes('country')) {
           msg.reply('Israel');
@@ -90,6 +90,21 @@ client.on('message', async (msg) => {
   ) {
     msg.reply('Barcelona fan');
   }
+  if (msg.body.toLowerCase().includes('qaher')) {
+    msg.reply('simp');
+  }
+  if (teams.chelsea(msg)) {
+    msg.reply('Chelsea is shit');
+  }
+  if (msg.body.toLowerCase().includes('firmino')) {
+    msg.reply('you just got DEFENSIVE STRIKEAIRED');
+  }
+  if (msg.body.toLowerCase().includes('milner')) {
+    msg.reply('goat');
+  }
+  if (msg.body.toLowerCase().includes('async')) {
+    msg.reply('await');
+  }
   if (msg.body.includes('מטוס')) {
     if (people.yuval(msg)) {
       msg.reply('מטוס');
@@ -97,11 +112,5 @@ client.on('message', async (msg) => {
   }
   if (msg.body.includes('סייבר')) {
     msg.reply('מטוס');
-  }
-  if (teams.chelsea(msg)) {
-    msg.reply('Chelsea is shit');
-  }
-  if (teams.southamption(msg)) {
-    msg.reply('goats!');
   }
 });
